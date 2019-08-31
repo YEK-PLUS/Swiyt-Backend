@@ -1,10 +1,11 @@
-const express = require('express');
+import mainRouter from './main';
 
-const router = express.Router();
-
-/* GET home page. */
-router.get('/', (req, res) => {
-  res.send(200, 'express').end();
-});
-
-module.exports = router;
+export const initializeRoutes = (app) => {
+  app.use('/main', mainRouter);
+};
+export const initializeError = (app) => {
+  app.use((req, res) => {
+    res.send(404, { error: 'not found' });
+  });
+};
+export default { initializeRoutes, initializeError };
