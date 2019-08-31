@@ -4,7 +4,7 @@ const http = require('http');
 global.key = require('./keys').default;
 const app = require('./main');
 
-const port = (process.env.PORT || '3000');
+const port = (process.env.PORT || '8080');
 app.set('port', port);
 
 const server = http.createServer(app);
