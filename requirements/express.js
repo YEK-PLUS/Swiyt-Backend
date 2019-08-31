@@ -33,7 +33,7 @@ export default () => {
   app.use(express.urlencoded({ extended: false }));
   app.use(cookieParser());
   app.use(session(sessionOption));
-  app.use(cors(corsOptions));
+  app.use('*', cors());
 
   return app;
 };
