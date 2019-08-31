@@ -1,4 +1,4 @@
 export default {
-  sessionScret: 'keyboard cat',
+  sessionSecret: 'keyboard cat',
   JWTkey: 'secret',
 };
