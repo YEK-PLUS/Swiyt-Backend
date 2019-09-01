@@ -3,6 +3,7 @@ import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import session from 'express-session';
 import cors from 'cors';
+import corsOptions from '../middlewares/cors';
 
 export default () => {
   const app = express();
@@ -12,28 +13,13 @@ export default () => {
     saveUninitialized: true,
   };
 
-  const whitelist = [
-    'http://localhost:3000',
-    'http://192.168.1.105:3000',
-  ];
-
-  const corsOptions = {
-    origin(origin, callback) {
-      if (whitelist.indexOf(origin) !== -1) {
-        callback(null, true);
-      } else {
-        callback(new Error('Not allowed by CORS'));
-      }
-    },
-    credentials: true,
-  };
 
   app.use(logger('dev'));
   app.use(express.json());
   app.use(express.urlencoded({ extended: false }));
   app.use(cookieParser());
   app.use(session(sessionOption));
-  app.use('*', cors());
+  app.use('*', cors(corsOptions));
 
   return app;
 };
