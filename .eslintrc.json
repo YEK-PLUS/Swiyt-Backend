@@ -10,7 +10,8 @@
     "globals": {
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly",
-        "key": "readonly"
+        "key": "readonly",
+        "passportSecurity": "readonly"
     },
     "parserOptions": {
         "ecmaVersion": 2018,
