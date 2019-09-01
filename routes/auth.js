@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import jwt from 'jsonwebtoken';
+import auth from '../middlewares/auth';
 
 import Models from '../models';
 
@@ -18,6 +19,9 @@ router.post('/token', (req, res) => {
     };
     res.status(200).send(body).end();
   });
+});
+router.post('/login', auth,(req, res) => {
+  res.status(200).send(req.user).end();
 });
 
 module.exports = router;
