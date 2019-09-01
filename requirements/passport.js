@@ -3,17 +3,24 @@ import {
   Strategy as JwtStrategy,
   ExtractJwt,
 } from 'passport-jwt';
+import Models from '../models';
+
+const { JustUserWithUid } = Models;
 
 const jwtOptions = {};
 jwtOptions.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
 jwtOptions.secretOrKey = key.JWTkey;
 
 export default (app) => {
-  const strategy = new JwtStrategy(jwtOptions, (jwtPayload, next) => {
-    const { uuid } = jwtPayload;
-
-    // WAIT DB CONNECTION
-    return next(null, uuid);
+  const strategy = new JwtStrategy(jwtOptions, (jwtPayload, done) => {
+    const { uid } = jwtPayload;
+    JustUserWithUid(uid).then((result) => {
+      if (!result) {
+        done(null, false);
+      }
+      done(null, result);
+    });
+    return done(null, false);
   });
   passport.serializeUser((user, done) => {
     done(null, user);
@@ -21,7 +28,7 @@ export default (app) => {
   passport.deserializeUser((user, done) => {
     done(null, user);
   });
-  passport.use(strategy);
+  passport.use('jwt', strategy);
   app.use(passport.initialize());
   app.use(passport.session());
   return passport;
