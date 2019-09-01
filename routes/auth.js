@@ -20,7 +20,7 @@ router.post('/token', (req, res) => {
     res.status(200).send(body).end();
   });
 });
-router.post('/login', auth,(req, res) => {
+router.post('/login', auth, (req, res) => {
   res.status(200).send(req.user).end();
 });
 
