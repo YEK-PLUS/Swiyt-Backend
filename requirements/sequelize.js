@@ -4,7 +4,7 @@ const {
   dbname, username, password, host, dialect,
 } = key.database;
 
-export default new Sequelize(dbname, username, password, {
+module.exports = new Sequelize(dbname, username, password, {
   host,
   dialect,
   pool: {
