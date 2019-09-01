@@ -20,7 +20,6 @@ export default (app) => {
       }
       done(null, result);
     });
-    return done(null, false);
   });
   passport.serializeUser((user, done) => {
     done(null, user);
