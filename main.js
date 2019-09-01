@@ -1,9 +1,12 @@
 import * as Requirements from './requirements';
+import Security from './middlewares/security';
 
 const { express, passport, routes } = Requirements;
 const { initializeRoutes, initializeError } = routes;
+
 const app = express();
-const myPassport = passport(app);
-const mainRoute = initializeRoutes(app);
-const errotRoute = initializeError(app);
+global.passportSecurity = passport(app);
+Security(app);
+initializeRoutes(app);
+initializeError(app);
 module.exports = app;
