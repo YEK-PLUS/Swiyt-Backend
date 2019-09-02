@@ -59,8 +59,8 @@
 
 [System Diagram]: <https://bit.ly/2ls3TlU>
 [Database Diagram]: <https://i.hizliresim.com/5Nnnrz.png>
-[Authentication]: <https://github.com/YEK-PLUS/Swiyt-Backend/blob/master/README.md#authentication>
+[Authentication]: <#authentication>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA0NjI0NjgyLC0xMzg1OTcxMTM3LC04Mz
-UzNTk5MTQsNDQ2NTE5ODAyXX0=
+eyJoaXN0b3J5IjpbMTc2NjgzNjkwOSwyMDQ2MjQ2ODIsLTEzOD
+U5NzExMzcsLTgzNTM1OTkxNCw0NDY1MTk4MDJdfQ==
 -->
