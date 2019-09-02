@@ -13,11 +13,11 @@ router.post('/token', (req, res) => {
   const { username } = req.body;
   const { password } = req.body;
   if (!password || !username) {
-    return res.status(200).send(key.returns.requiredFields).end();
+    return res.status(403).send(key.returns.requiredFields).end();
   }
   return JustUser(username, password).then((user) => {
     if (!user) {
-      return res.status(200).send(key.returns.userNotFound).end();
+      return res.status(403).send(key.returns.userNotFound).end();
     }
     const payload = { uid: user.uid };
     const token = jwt.sign(payload, key.JWTkey);
@@ -30,18 +30,18 @@ router.post('/token', (req, res) => {
 router.post('/login', auth, (req, res) => {
   res.status(200).send(JustMe(req.user)).end();
 });
-router.post('/logout',auth, (req, res) => {
-	req.logout();
-	res.status(200).send(key.returns.success);
+router.post('/logout', auth, (req, res) => {
+  req.logout();
+  res.status(200).send(key.returns.success);
 });
 router.post('/register', (req, res) => {
   const { username, password, mail } = req.body;
   if (!username || !password || !mail) {
-    return res.status(200).send(key.returns.requiredFields).end();
+    return res.status(403).send(key.returns.requiredFields).end();
   }
   return JustUserWithUserName(username).then((user) => {
     if (user != null) {
-      return res.status(200).send(key.returns.userExists).end();
+      return res.status(403).send(key.returns.userExists).end();
     }
     const uid = uuid();
     const buildUser = {
@@ -57,7 +57,7 @@ router.post('/register', (req, res) => {
     };
     User.build(buildUser).save();
     UserDetails.build(buildUserDetails).save();
-    return res.send(200, key.returns.success).end();
+    return res.send(201, key.returns.success).end();
   });
 });
 
