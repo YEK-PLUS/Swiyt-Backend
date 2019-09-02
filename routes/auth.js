@@ -12,6 +12,9 @@ router.post('/token', (req, res) => {
   const { username } = req.body;
   const { password } = req.body;
   JustUser(username, password).then((user) => {
+  if (!password || !username) {
+    return res.status(200).send(key.returns.requiredFields).end();
+  }
     const payload = { uid: user.uid };
     const token = jwt.sign(payload, key.JWTkey);
     const body = {
