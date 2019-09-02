@@ -25,7 +25,7 @@ Returned Value
 
 
 
-|[Database Diagram Link][Database Diagram]|
+|[System Diagram Link][System Diagram]|
 |-------|
 |[![System Diagram](/doc/diagram-01.svg "System Diagram")][System Diagram]|
 |[System Diagram Link][System Diagram]|
@@ -40,6 +40,6 @@ Returned Value
 [System Diagram]: <https://bit.ly/2ls3TlU>
 [Database Diagram]: <https://i.hizliresim.com/5Nnnrz.png>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MTQzMDg2NjMsLTgzNTM1OTkxNCw0ND
-Y1MTk4MDJdfQ==
+eyJoaXN0b3J5IjpbMjEzOTgyNzY1NywtODM1MzU5OTE0LDQ0Nj
+UxOTgwMl19
 -->
