@@ -9,7 +9,8 @@
 ### `/auth` Authentication
 ---
 #### `/token`
-**Authentication Not Required **
+**Authentication Not Required**
+<br>
 **Required Fileds**
 
 |Username|Password|
@@ -37,6 +38,6 @@ Returned Value
 [System Diagram]: <https://bit.ly/2ls3TlU>
 [Database Diagram]: <https://i.hizliresim.com/5Nnnrz.png>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNjEzODQ4NDQsLTgzNTM1OTkxNCw0ND
+eyJoaXN0b3J5IjpbLTE1MzI2ODA4NzAsLTgzNTM1OTkxNCw0ND
 Y1MTk4MDJdfQ==
 -->
