@@ -59,6 +59,19 @@
 }
 ```
 ---
+#### `/logout`
+**[Authentication] Required !**
+
+**No Required Filed**
+
+**Returned Values**
+
+```json
+{
+    "success":"success"
+}
+```
+---
 #### `/register`
 **Authentication Not Required**
 

@@ -30,6 +30,10 @@ router.post('/token', (req, res) => {
 router.post('/login', auth, (req, res) => {
   res.status(200).send(JustMe(req.user)).end();
 });
+router.post('/logout',auth, (req, res) => {
+	req.logout();
+	res.status(200).send(key.returns.success);
+});
 router.post('/register', (req, res) => {
   const { username, password, mail } = req.body;
   if (!username || !password || !mail) {
