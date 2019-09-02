@@ -1,11 +1,8 @@
 import Sequelize from 'sequelize';
 
-module.exports = sequelize.define('users', {
+module.exports = sequelize.define('images', {
   uid: { type: Sequelize.CHAR, primaryKey: true },
-  avatar_uid: Sequelize.CHAR,
-  username: Sequelize.STRING,
-  realname: Sequelize.STRING,
-  password: Sequelize.STRING,
+  cdn_uid: Sequelize.CHAR,
 
   deleted_at: Sequelize.DATE,
   created_at: Sequelize.DATE,
