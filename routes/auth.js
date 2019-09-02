@@ -30,11 +30,11 @@ router.post('/login', auth, (req, res) => {
 router.post('/register', (req, res) => {
   const { username, password, mail } = req.body;
   if (!username || !password || !mail) {
-    return res.send(200, key.returns.requiredFields).end();
+    return res.status(200).send(key.returns.requiredFields).end();
   }
   return JustUserWithUserName(username).then((user) => {
     if (user != null) {
-      return res.send(401, key.returns.userExists).end();
+      return res.status(200).send(key.returns.userExists).end();
     }
     const uid = uuid();
     const buildUser = {
