@@ -1,10 +1,14 @@
 # Swiyt-Backend
 
 
-## API Endpoints
-## Authentication
-**Add Authorization Header the request 
 
+---
+## Authentication
+**Add Authorization Header the request**
+|Authorization|Bearer JWT|
+|-|-|
+---
+## API Endpoints
 ### `/auth` Authentication Main Route
 ---
 #### `/token`
@@ -54,6 +58,6 @@
 [System Diagram]: <https://bit.ly/2ls3TlU>
 [Database Diagram]: <https://i.hizliresim.com/5Nnnrz.png>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgzNzU1MTI5MywtMTM4NTk3MTEzNywtOD
+eyJoaXN0b3J5IjpbMTYxMjg2NDkyMCwtMTM4NTk3MTEzNywtOD
 M1MzU5OTE0LDQ0NjUxOTgwMl19
 -->
