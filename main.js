@@ -4,7 +4,7 @@ const { express, passport, routes } = Requirements;
 const { initializeRoutes, initializeError } = routes;
 
 const app = express();
-global.passports = passport(app);
+passport(app);
 initializeRoutes(app);
 initializeError(app);
 module.exports = app;
