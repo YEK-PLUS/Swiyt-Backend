@@ -11,3 +11,8 @@ export const JustUserWithUid = (uid) => User.findOne({
     uid,
   },
 });
+export const JustUserWithUserName = (username) => User.findOne({
+  where: {
+    username,
+  },
+});
