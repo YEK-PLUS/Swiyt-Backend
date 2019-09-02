@@ -22,7 +22,20 @@
 }
 ```
 ---
+---
+#### `/login`
+**Authentication Required !**
 
+**No Required Filed**
+
+**Returned Value**
+
+```json
+{
+	"uuid":"User uuid",
+}
+```
+---
 
 |[System Diagram Link][System Diagram]|
 |-------|
@@ -37,6 +50,6 @@
 [System Diagram]: <https://bit.ly/2ls3TlU>
 [Database Diagram]: <https://i.hizliresim.com/5Nnnrz.png>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg4NjA1NjI1MiwtMTM4NTk3MTEzNywtOD
+eyJoaXN0b3J5IjpbMTQyNjQ5NDc2NSwtMTM4NTk3MTEzNywtOD
 M1MzU5OTE0LDQ0NjUxOTgwMl19
 -->
