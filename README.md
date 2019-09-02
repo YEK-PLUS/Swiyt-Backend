@@ -18,7 +18,7 @@ Returned Value
 
 ```json
 {
-	token:JWT
+	"token":"JWT Token"
 }
 ```
 ---
