@@ -35,13 +35,18 @@
 
 **No Required Filed**
 
-**Returned Value**
+**Returned Values**
 
 ```json
 {
     "uid": "d06e378d-502b-4a31-aa26-67b60e8e8bca",
     "username": "YEK",
     "realname": "Yunus Emre Köker",
+}
+```
+```json
+{
+    "error": "fill in the required fields"
 }
 ```
 ---
@@ -87,7 +92,7 @@
 [Database Diagram]: <https://i.hizliresim.com/5Nnnrz.png>
 [Authentication]: <#authentication>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI1Njc3MTI5NCwxNzY2ODM2OTA5LDIwND
+eyJoaXN0b3J5IjpbMTQ2NjIwODEwMiwxNzY2ODM2OTA5LDIwND
 YyNDY4MiwtMTM4NTk3MTEzNywtODM1MzU5OTE0LDQ0NjUxOTgw
 Ml19
 -->
