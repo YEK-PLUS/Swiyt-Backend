@@ -7,8 +7,8 @@
 ## API Endpoints
 
 ### `/auth`
+#### `/token`
 
-Simple Auth
 
 
 
@@ -24,5 +24,5 @@ Simple Auth
 [System Diagram]: <https://bit.ly/2ls3TlU>
 [Database Diagram]: <https://i.hizliresim.com/5Nnnrz.png>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzMzMTYyODAxLDQ0NjUxOTgwMl19
+eyJoaXN0b3J5IjpbMjA5MzQ5MzE3Myw0NDY1MTk4MDJdfQ==
 -->
