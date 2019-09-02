@@ -1,3 +1,7 @@
-/* eslint-disable global-require */
-export const User = require('./user')(sequelize);
-/* eslint-enable global-require */
+import User from './user';
+import UserDetails from './userDetails';
+
+UserDetails.belongsTo(User, { foreignKey: 'uid' });
+User.belongsTo(UserDetails, { foreignKey: 'uid' });
+
+module.exports = { User, UserDetails };
