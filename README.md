@@ -7,14 +7,14 @@
 ---
 #### `/token`
 **Authentication Not Required**
-<br>
+
 **Required Fileds**
 
 |Username|Password|
 |--|--|
 |Requiered|Requiered|
 
-Returned Value
+**Returned Value**
 
 ```json
 {
@@ -22,7 +22,6 @@ Returned Value
 }
 ```
 ---
-
 
 
 |[System Diagram Link][System Diagram]|
@@ -38,6 +37,6 @@ Returned Value
 [System Diagram]: <https://bit.ly/2ls3TlU>
 [Database Diagram]: <https://i.hizliresim.com/5Nnnrz.png>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzODU5NzExMzcsLTgzNTM1OTkxNCw0ND
-Y1MTk4MDJdfQ==
+eyJoaXN0b3J5IjpbMTg4NjA1NjI1MiwtMTM4NTk3MTEzNywtOD
+M1MzU5OTE0LDQ0NjUxOTgwMl19
 -->
