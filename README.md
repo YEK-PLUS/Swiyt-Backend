@@ -6,10 +6,12 @@
 
 ## API Endpoints
 
-### `/auth`
+### `/auth` Authentication
 #### `/token`
 
+Required Fileds
 
+|User
 
 
 
@@ -24,5 +26,5 @@
 [System Diagram]: <https://bit.ly/2ls3TlU>
 [Database Diagram]: <https://i.hizliresim.com/5Nnnrz.png>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA5MzQ5MzE3Myw0NDY1MTk4MDJdfQ==
+eyJoaXN0b3J5IjpbOTc1Mjc5NDc2LDQ0NjUxOTgwMl19
 -->
