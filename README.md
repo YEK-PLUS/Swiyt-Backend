@@ -32,7 +32,35 @@
 ---
 ---
 #### `/login`
+**[Authentication] Required !**
 
+**No Required Filed**
+
+**Returned Value**
+
+```json
+{
+    "uid": "d06e378d-502b-4a31-aa26-67b60e8e8bca",
+    "username": "YEK",
+    "realname": "Yunus Emre Köker",
+}
+```
+---
+#### `/login`
+**[Authentication] Required !**
+
+**No Required Filed**
+
+**Returned Value**
+
+```json
+{
+    "uid": "d06e378d-502b-4a31-aa26-67b60e8e8bca",
+    "username": "YEK",
+    "realname": "Yunus Emre Köker",
+}
+```
+---
 **Authentication Not Required**
 
 **Required Fileds**
@@ -41,14 +69,23 @@
 |--|--|--|
 |Requiered|Requiered|Requiered|
 
-**Returned Value**
+**Returned Values**
 
 ```json
 {
-    "token": "success"
+    "success": "success"
 }
 ```
----
+```json
+{
+    "error": "user exists"
+}
+```
+```json
+{
+    "error": "fill in the required fields"
+}
+```
 |[System Diagram Link][System Diagram]|
 |-------|
 |[![System Diagram](/doc/diagram-01.svg "System Diagram")][System Diagram]|
@@ -63,7 +100,7 @@
 [Database Diagram]: <https://i.hizliresim.com/5Nnnrz.png>
 [Authentication]: <#authentication>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAyMTEzNzc3MSwxNzY2ODM2OTA5LDIwND
+eyJoaXN0b3J5IjpbMTM3MjQ4NjgxNSwxNzY2ODM2OTA5LDIwND
 YyNDY4MiwtMTM4NTk3MTEzNywtODM1MzU5OTE0LDQ0NjUxOTgw
 Ml19
 -->
