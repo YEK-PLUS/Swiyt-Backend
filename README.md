@@ -46,7 +46,21 @@
 }
 ```
 ---
+#### `/register`
+**[Authentication] Required !**
 
+**No Required Filed**
+
+**Returned Value**
+
+```json
+{
+    "uid": "d06e378d-502b-4a31-aa26-67b60e8e8bca",
+    "username": "YEK",
+    "realname": "Yunus Emre Köker",
+}
+```
+---
 |[System Diagram Link][System Diagram]|
 |-------|
 |[![System Diagram](/doc/diagram-01.svg "System Diagram")][System Diagram]|
@@ -61,6 +75,7 @@
 [Database Diagram]: <https://i.hizliresim.com/5Nnnrz.png>
 [Authentication]: <#authentication>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc2NjgzNjkwOSwyMDQ2MjQ2ODIsLTEzOD
-U5NzExMzcsLTgzNTM1OTkxNCw0NDY1MTk4MDJdfQ==
+eyJoaXN0b3J5IjpbMTY4NTg5MTAwNCwxNzY2ODM2OTA5LDIwND
+YyNDY4MiwtMTM4NTk3MTEzNywtODM1MzU5OTE0LDQ0NjUxOTgw
+Ml19
 -->
