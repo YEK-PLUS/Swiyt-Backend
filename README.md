@@ -30,7 +30,6 @@
 }
 ```
 ---
----
 #### `/login`
 **[Authentication] Required !**
 
@@ -45,7 +44,6 @@
     "realname": "Yunus Emre Köker",
 }
 ```
----
 ---
 #### `/register`
 **Authentication Not Required**
@@ -89,7 +87,7 @@
 [Database Diagram]: <https://i.hizliresim.com/5Nnnrz.png>
 [Authentication]: <#authentication>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjQ0NzMyNTk0LDE3NjY4MzY5MDksMjA0Nj
-I0NjgyLC0xMzg1OTcxMTM3LC04MzUzNTk5MTQsNDQ2NTE5ODAy
-XX0=
+eyJoaXN0b3J5IjpbMTI1Njc3MTI5NCwxNzY2ODM2OTA5LDIwND
+YyNDY4MiwtMTM4NTk3MTEzNywtODM1MzU5OTE0LDQ0NjUxOTgw
+Ml19
 -->
