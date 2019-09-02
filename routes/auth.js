@@ -5,7 +5,7 @@ import auth from '../middlewares/auth';
 import Models from '../models';
 
 const {
-  JustUser, JustUserWithUserName, User, UserDetails,
+  JustUser, JustUserWithUserName, User, UserDetails,JustMe
 } = Models;
 const router = Router();
 
@@ -28,7 +28,7 @@ router.post('/token', (req, res) => {
   });
 });
 router.post('/login', auth, (req, res) => {
-  res.status(200).send(req.user).end();
+  res.status(200).send(JustMe(req.user)).end();
 });
 router.post('/register', (req, res) => {
   const { username, password, mail } = req.body;
@@ -45,9 +45,11 @@ router.post('/register', (req, res) => {
       username,
       password,
     };
+    let mail_verified = false;
     const buildUserDetails = {
       uid,
       mail,
+      mail_verified,
     };
     User.build(buildUser).save();
     UserDetails.build(buildUserDetails).save();
