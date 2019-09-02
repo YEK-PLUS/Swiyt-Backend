@@ -1,4 +1,4 @@
-import { User } from '../model';
+import User from '../model/user';
 
 export const JustUser = (username, password) => User.findOne({
   where: {
