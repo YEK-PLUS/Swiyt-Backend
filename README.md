@@ -32,32 +32,20 @@
 ---
 ---
 #### `/login`
-**[Authentication] Required !**
 
-**No Required Filed**
+**Authentication Not Required**
 
-**Returned Value**
+**Required Fileds**
 
-```json
-{
-    "uid": "d06e378d-502b-4a31-aa26-67b60e8e8bca",
-    "username": "YEK",
-    "realname": "Yunus Emre Köker",
-}
-```
----
-#### `/register`
-**[Authentication] Required !**
-
-**No Required Filed**
+|Username|Password|Mail|
+|--|--|--|
+|Requiered|Requiered|Requiered|
 
 **Returned Value**
 
 ```json
 {
-    "uid": "d06e378d-502b-4a31-aa26-67b60e8e8bca",
-    "username": "YEK",
-    "realname": "Yunus Emre Köker",
+    "token": "success"
 }
 ```
 ---
@@ -75,7 +63,7 @@
 [Database Diagram]: <https://i.hizliresim.com/5Nnnrz.png>
 [Authentication]: <#authentication>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY4NTg5MTAwNCwxNzY2ODM2OTA5LDIwND
+eyJoaXN0b3J5IjpbMTAyMTEzNzc3MSwxNzY2ODM2OTA5LDIwND
 YyNDY4MiwtMTM4NTk3MTEzNywtODM1MzU5OTE0LDQ0NjUxOTgw
 Ml19
 -->
