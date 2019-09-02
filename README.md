@@ -2,8 +2,10 @@
 
 
 ## API Endpoints
+## Authentication
+**Add Authorization Header the request 
 
-### `/auth` Authentication
+### `/auth` Authentication Main Route
 ---
 #### `/token`
 **Authentication Not Required**
@@ -18,7 +20,7 @@
 
 ```json
 {
-	"token":"JWT Token"
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJkMDZlMzc4ZC01MDJiLTRhMzEtYWEyNi02N2I2MGU4ZThiY2EiLCJpYXQiOjE1Njc0MzU1ODB9.GWA9jPDy8DcYsg7hhNgP_biyDqB899eh7qB8SVBtpw0"
 }
 ```
 ---
@@ -52,6 +54,6 @@
 [System Diagram]: <https://bit.ly/2ls3TlU>
 [Database Diagram]: <https://i.hizliresim.com/5Nnnrz.png>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY3OTUyNDI2MiwtMTM4NTk3MTEzNywtOD
+eyJoaXN0b3J5IjpbLTgzNzU1MTI5MywtMTM4NTk3MTEzNywtOD
 M1MzU5OTE0LDQ0NjUxOTgwMl19
 -->
