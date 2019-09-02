@@ -46,21 +46,8 @@
 }
 ```
 ---
-#### `/login`
-**[Authentication] Required !**
-
-**No Required Filed**
-
-**Returned Value**
-
-```json
-{
-    "uid": "d06e378d-502b-4a31-aa26-67b60e8e8bca",
-    "username": "YEK",
-    "realname": "Yunus Emre Köker",
-}
-```
 ---
+#### `/register`
 **Authentication Not Required**
 
 **Required Fileds**
@@ -86,6 +73,8 @@
     "error": "fill in the required fields"
 }
 ```
+---
+
 |[System Diagram Link][System Diagram]|
 |-------|
 |[![System Diagram](/doc/diagram-01.svg "System Diagram")][System Diagram]|
@@ -100,7 +89,7 @@
 [Database Diagram]: <https://i.hizliresim.com/5Nnnrz.png>
 [Authentication]: <#authentication>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM3MjQ4NjgxNSwxNzY2ODM2OTA5LDIwND
-YyNDY4MiwtMTM4NTk3MTEzNywtODM1MzU5OTE0LDQ0NjUxOTgw
-Ml19
+eyJoaXN0b3J5IjpbNjQ0NzMyNTk0LDE3NjY4MzY5MDksMjA0Nj
+I0NjgyLC0xMzg1OTcxMTM3LC04MzUzNTk5MTQsNDQ2NTE5ODAy
+XX0=
 -->
