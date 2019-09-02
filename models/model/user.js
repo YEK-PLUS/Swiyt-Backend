@@ -1,7 +1,7 @@
 import Sequelize from 'sequelize';
 
-module.exports = (sequelize) => sequelize.define('user', {
-  uid: { type: Sequelize.STRING, primaryKey: true },
+module.exports = sequelize.define('users', {
+  uid: { type: Sequelize.CHAR, primaryKey: true },
   username: Sequelize.STRING,
   realname: Sequelize.STRING,
   password: Sequelize.STRING,

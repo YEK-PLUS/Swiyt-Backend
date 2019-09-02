@@ -11,7 +11,8 @@
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly",
         "key": "readonly",
-        "passportSecurity": "readonly"
+        "passportSecurity": "readonly",
+        "sequelize":"readonly"
     },
     "parserOptions": {
         "ecmaVersion": 2018,

@@ -2,6 +2,7 @@
 
 const http = require('http');
 global.key = require('./keys');
+global.sequelize = require('./requirements/sequelize');
 const app = require('./main');
 
 const port = (process.env.PORT || '8080');
