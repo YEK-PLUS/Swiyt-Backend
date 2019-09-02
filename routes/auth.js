@@ -27,5 +27,29 @@ router.post('/token', (req, res) => {
 router.post('/login', auth, (req, res) => {
   res.status(200).send(req.user).end();
 });
+router.post('/register', (req, res) => {
+  const { username, password, mail } = req.body;
+  if (!username || !password || !mail) {
+    return res.send(200, key.returns.requiredFields).end();
+  }
+  return JustUserWithUserName(username).then((user) => {
+    if (user != null) {
+      return res.send(401, key.returns.userExists).end();
+    }
+    const uid = uuid();
+    const buildUser = {
+      uid,
+      username,
+      password,
+    };
+    const buildUserDetails = {
+      uid,
+      mail,
+    };
+    User.build(buildUser).save();
+    UserDetails.build(buildUserDetails).save();
+    return res.send(200, key.returns.success).end();
+  });
+});
 
 module.exports = router;
