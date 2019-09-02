@@ -23,6 +23,9 @@ module.exports = {
     userExists: {
       error: 'user exists',
     },
+    userNotFound: {
+      error: 'user not found',
+    },
     requiredFields: {
       error: 'fill in the required fields',
     },
