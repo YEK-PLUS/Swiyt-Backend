@@ -11,7 +11,12 @@
 
 Required Fileds
 
-|User
+|Username|Password|
+|--|--|
+|Requiered|Requiered|
+
+Returned Value
+
 
 
 
@@ -26,5 +31,5 @@ Required Fileds
 [System Diagram]: <https://bit.ly/2ls3TlU>
 [Database Diagram]: <https://i.hizliresim.com/5Nnnrz.png>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTc1Mjc5NDc2LDQ0NjUxOTgwMl19
+eyJoaXN0b3J5IjpbMTk5NTQ2MDQwNiw0NDY1MTk4MDJdfQ==
 -->
