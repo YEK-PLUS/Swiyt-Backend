@@ -4,7 +4,9 @@
 
 ---
 ## Authentication
+
 **Add Authorization Header the request**
+
 |Authorization|Bearer JWT|
 |-|-|
 ---
@@ -58,6 +60,6 @@
 [System Diagram]: <https://bit.ly/2ls3TlU>
 [Database Diagram]: <https://i.hizliresim.com/5Nnnrz.png>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYxMjg2NDkyMCwtMTM4NTk3MTEzNywtOD
-M1MzU5OTE0LDQ0NjUxOTgwMl19
+eyJoaXN0b3J5IjpbNDM2MDM1NTgwLC0xMzg1OTcxMTM3LC04Mz
+UzNTk5MTQsNDQ2NTE5ODAyXX0=
 -->
