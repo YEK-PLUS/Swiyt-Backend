@@ -5,7 +5,7 @@ import auth from '../middlewares/auth';
 import Models from '../models';
 
 const {
-  JustUser, JustUserWithUserName, User, UserDetails,JustMe
+  JustUser, JustUserWithUserName, User, UserDetails, JustMe,
 } = Models;
 const router = Router();
 
@@ -16,7 +16,7 @@ router.post('/token', (req, res) => {
     return res.status(200).send(key.returns.requiredFields).end();
   }
   return JustUser(username, password).then((user) => {
-    if(!user){
+    if (!user) {
       return res.status(200).send(key.returns.userNotFound).end();
     }
     const payload = { uid: user.uid };
@@ -45,7 +45,7 @@ router.post('/register', (req, res) => {
       username,
       password,
     };
-    let mail_verified = false;
+    const mail_verified = false;
     const buildUserDetails = {
       uid,
       mail,
