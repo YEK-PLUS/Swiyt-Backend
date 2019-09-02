@@ -8,6 +8,8 @@
 
 ### `/auth`
 
+Simple Auth
+
 
 
 
@@ -22,5 +24,5 @@
 [System Diagram]: <https://bit.ly/2ls3TlU>
 [Database Diagram]: <https://i.hizliresim.com/5Nnnrz.png>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI0NTMyODQxNyw0NDY1MTk4MDJdfQ==
+eyJoaXN0b3J5IjpbMzMzMTYyODAxLDQ0NjUxOTgwMl19
 -->
