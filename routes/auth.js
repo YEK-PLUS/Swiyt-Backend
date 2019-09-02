@@ -1,11 +1,12 @@
 import { Router } from 'express';
 import jwt from 'jsonwebtoken';
+import uuid from 'uuid/v1';
 import auth from '../middlewares/auth';
-
 import Models from '../models';
 
-const { JustUser } = Models;
-
+const {
+  JustUser, JustUserWithUserName, User, UserDetails,
+} = Models;
 const router = Router();
 
 router.post('/token', (req, res) => {
