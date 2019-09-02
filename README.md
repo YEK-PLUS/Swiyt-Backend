@@ -32,10 +32,9 @@
 
 ```json
 {
-	"uuid":"User uuid",
-	"username":"User username",
-	"realname":"User realname",
-	"":"User uuid",
+    "uid": "d06e378d-502b-4a31-aa26-67b60e8e8bca",
+    "username": "YEK",
+    "realname": "Yunus Emre Köker",
 }
 ```
 ---
@@ -53,6 +52,6 @@
 [System Diagram]: <https://bit.ly/2ls3TlU>
 [Database Diagram]: <https://i.hizliresim.com/5Nnnrz.png>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODY3ODIwODA5LC0xMzg1OTcxMTM3LC04Mz
-UzNTk5MTQsNDQ2NTE5ODAyXX0=
+eyJoaXN0b3J5IjpbMTY3OTUyNDI2MiwtMTM4NTk3MTEzNywtOD
+M1MzU5OTE0LDQ0NjUxOTgwMl19
 -->
