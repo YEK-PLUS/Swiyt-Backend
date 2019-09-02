@@ -23,7 +23,7 @@ Returned Value
 	token:JWT
 }
 ```
-
+---
 
 
 
@@ -37,5 +37,5 @@ Returned Value
 [System Diagram]: <https://bit.ly/2ls3TlU>
 [Database Diagram]: <https://i.hizliresim.com/5Nnnrz.png>
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNDg5ODM5ODcsNDQ2NTE5ODAyXX0=
+eyJoaXN0b3J5IjpbLTgzNTM1OTkxNCw0NDY1MTk4MDJdfQ==
 -->
