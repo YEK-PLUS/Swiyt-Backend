@@ -9,6 +9,7 @@
 
 |Authorization|Bearer JWT|
 |-|-|
+
 ---
 ## API Endpoints
 ### `/auth` Authentication Main Route
@@ -42,6 +43,14 @@
     "uid": "d06e378d-502b-4a31-aa26-67b60e8e8bca",
     "username": "YEK",
     "realname": "Yunus Emre Köker",
+    "image": {
+        "uid": "default",
+        "cdn_uid": 0,
+        "cdn": {
+            "uid": 0,
+            "url": "http://image.com/image.png"
+        }
+    }
 }
 ```
 ```json
@@ -91,8 +100,3 @@
 [System Diagram]: <https://bit.ly/2ls3TlU>
 [Database Diagram]: <https://i.hizliresim.com/5Nnnrz.png>
 [Authentication]: <#authentication>
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ2NjIwODEwMiwxNzY2ODM2OTA5LDIwND
-YyNDY4MiwtMTM4NTk3MTEzNywtODM1MzU5OTE0LDQ0NjUxOTgw
-Ml19
--->
