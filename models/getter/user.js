@@ -1,36 +1,23 @@
 import User from '../model/user';
-import Images from '../model/images';
-import Cdn from '../model/cdn';
+import * as Includes from '../includes';
 
-export const UserIncludes = {
-  include: [
-    {
-      model: Images,
-      include: [
-        {
-          model: Cdn,
-        },
-      ],
-    },
-  ],
-};
-
+const { IncludeUser } = Includes;
 export const JustUser = (username, password) => User.findOne({
   where: {
     username,
     password,
   },
-  ...UserIncludes,
+  include: IncludeUser,
 });
 export const JustUserWithUid = (uid) => User.findOne({
   where: {
     uid,
   },
-  ...UserIncludes,
+  include: IncludeUser,
 });
 export const JustUserWithUserName = (username) => User.findOne({
   where: {
     username,
   },
-  ...UserIncludes,
+  include: IncludeUser,
 });
