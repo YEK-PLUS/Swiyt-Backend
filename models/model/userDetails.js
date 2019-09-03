@@ -8,7 +8,7 @@ module.exports = sequelize.define('user_details', {
   telephone_code: Sequelize.STRING,
 
   mail: Sequelize.STRING,
-  mail_verified: Sequelize.BOOLEAN,
+  mail_verified: { type: Sequelize.CHAR, defaultValue: false },
   mail_code: Sequelize.STRING,
 
   firstname: Sequelize.STRING,
@@ -19,6 +19,9 @@ module.exports = sequelize.define('user_details', {
 
   location: Sequelize.STRING,
   title: Sequelize.STRING,
+
+  picture_uid: { type: Sequelize.CHAR, defaultValue: 'default' },
+  banner_uid: { type: Sequelize.CHAR, defaultValue: 'default' },
 
   links: Sequelize.STRING,
   referance: Sequelize.STRING,
