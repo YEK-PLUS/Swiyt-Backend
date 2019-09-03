@@ -5,7 +5,7 @@ import auth from '../middlewares/auth';
 import Models from '../models';
 
 const {
-  JustUser, JustUserWithUserName, User, UserDetails, JustMe,
+  JustUser, JustUserWithUserName, User, UserDetails, FilterUser,
 } = Models;
 const router = Router();
 
@@ -28,7 +28,7 @@ router.post('/token', (req, res) => {
   });
 });
 router.post('/login', auth, (req, res) => {
-  res.status(200).send(JustMe(req.user)).end();
+  res.status(200).send(FilterUser(req.user)).end();
 });
 router.post('/logout', auth, (req, res) => {
   req.logout();
