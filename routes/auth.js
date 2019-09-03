@@ -49,11 +49,9 @@ router.post('/register', (req, res) => {
       username,
       password,
     };
-    const mail_verified = false;
     const buildUserDetails = {
       uid,
       mail,
-      mail_verified,
     };
     User.build(buildUser).save();
     UserDetails.build(buildUserDetails).save();
