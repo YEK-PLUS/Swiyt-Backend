@@ -1,6 +1,6 @@
 {
-  "name": "swiyt-backend",
-  "version": "0.0.0",
+  "name": "Swiyt-Backend",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "start": "nodemon server --exec babel-node --presets es2015,stage-2",
