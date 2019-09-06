@@ -2,6 +2,7 @@ import User from './model/user';
 import Images from './model/images';
 import Cdn from './model/cdn';
 import UserDetails from './model/userDetails';
+import Course from './model/course';
 
 export const IncludeImage = {
   model: Images,
@@ -22,3 +23,18 @@ export const IncludeUserDetail = {
 };
 export const IncludeUser = [IncludeImage];
 export const IncludeUserAndUserDetails = [IncludeImage, IncludeUserDetail];
+export const IncludeCourse = [
+  {
+    model:User,
+    include:IncludeUser,
+    as:'admin'
+  },
+  {
+    ...IncludeImage,
+    as: 'banner',
+  },
+  {
+    ...IncludeImage,
+    as: 'thub',
+  },
+];

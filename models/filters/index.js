@@ -1,3 +1,4 @@
 import * as User from './user';
+import * as Course from './course';
 
-module.exports = { ...User };
+module.exports = { ...User,...Course };

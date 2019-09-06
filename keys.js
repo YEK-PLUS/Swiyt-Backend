@@ -2,10 +2,10 @@ module.exports = {
   sessionSecret: 'keyboard cat',
   JWTkey: 'secret',
   database: {
-    dbname: 'heroku_b543e43b5602ad7',
-    username: 'b531d6fd58abaf',
-    password: '1d7e0832',
-    host: 'eu-cdbr-west-02.cleardb.net',
+    dbname: 'swiyt',
+    username: 'root',
+    password: '',
+    host: 'localhost',
     dialect: 'mysql',
   },
   whitelist: [
