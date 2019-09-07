@@ -22,5 +22,5 @@ Subscription.belongsTo(Course, { foreignKey: 'lesson_uid' });
 
 
 module.exports = {
-  User, UserDetails, Course, Subscription,
+  User, UserDetails, Course, Subscription,Cdn,Images
 };

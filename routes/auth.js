@@ -5,7 +5,7 @@ import auth from '../middlewares/auth';
 import Models from '../models';
 
 const {
-  JustUser, JustUserWithUserName, User, UserDetails, FilterUser,
+  JustUser, JustUserWithUserName, User, UserDetails, FilterUser,Cdn,Images
 } = Models;
 const router = Router();
 
@@ -44,17 +44,49 @@ router.post('/register', (req, res) => {
       return res.status(403).send(key.returns.userExists).end();
     }
     const uid = uuid();
+    const avatarUid = uuid();
+    const avatarUidCdn = uuid();
+
+    const bannerUid = uuid();
+    const bannerUidCdn = uuid();
+
     const buildUser = {
       uid,
       username,
       password,
+      avatar_uid:avatarUid,
     };
     const buildUserDetails = {
       uid,
       mail,
+      picture_uid:avatarUid,
+      banner_uid:bannerUid,
     };
+    const buildUserAvatarImage = {
+      uid:avatarUid,
+      cdn_uid:avatarUidCdn
+    }
+    const buildUserAvatarCdn = {
+      uid:avatarUidCdn,
+      url:"https://dummyimage.com/400x400/141414/fff&text="+username.substring(0,2)
+    }
+    const buildUserBannerImage = {
+      uid:bannerUid,
+      cdn_uid:bannerUidCdn
+    }
+    const buildUserBannerCdn = {
+      uid:bannerUidCdn,
+      url:"https://dummyimage.com/600x300/141414/fff&text="+username
+    }
+    Cdn.build(buildUserAvatarCdn).save();
+    Cdn.build(buildUserBannerCdn).save();
+
+    Images.build(buildUserAvatarImage).save();
+    Images.build(buildUserBannerImage).save();
+
     User.build(buildUser).save();
     UserDetails.build(buildUserDetails).save();
+
     return res.send(201, key.returns.success).end();
   });
 });
