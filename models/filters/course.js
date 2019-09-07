@@ -6,7 +6,6 @@ export const FilterCourse = (CourseModel) => {
   const filteredCourse = _.pick(course, [
     'uid',
     'user_uid',
-    'dates_uid',
     'thub_uid',
     'banner_uid',
     'price',
