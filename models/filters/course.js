@@ -19,3 +19,13 @@ export const FilterCourse = (CourseModel) => {
   filteredCourse.thub = FilterImage(CourseModel.thub);
   return filteredCourse;
 };
+export const FilterSubscription = (SubscriptionModel) => {
+  const subscriptions = SubscriptionModel.toJSON();
+  const filteredSubscriptions = _.pick(subscriptions, [
+    'uid',
+    'user_uid',
+    'lesson_uid',
+  ]);
+  filteredSubscriptions.lesson = FilterCourse(SubscriptionModel.lesson);
+  return filteredSubscriptions;
+};
