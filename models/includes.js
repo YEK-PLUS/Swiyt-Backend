@@ -25,9 +25,9 @@ export const IncludeUser = [IncludeImage];
 export const IncludeUserAndUserDetails = [IncludeImage, IncludeUserDetail];
 export const IncludeCourse = [
   {
-    model:User,
-    include:IncludeUser,
-    as:'admin'
+    model: User,
+    include: IncludeUser,
+    as: 'admin',
   },
   {
     ...IncludeImage,
@@ -40,7 +40,7 @@ export const IncludeCourse = [
 ];
 export const IncludeSubscription = [
   {
-    model:Course,
-    include:IncludeCourse,
-  }
+    model: Course,
+    include: IncludeCourse,
+  },
 ];

@@ -4,6 +4,7 @@ import Images from './images';
 import Cdn from './cdn';
 import Course from './course';
 import Subscription from './subscription';
+
 User.belongsTo(UserDetails, { foreignKey: 'uid' });
 
 User.belongsTo(Images, { foreignKey: 'avatar_uid' });
@@ -17,7 +18,9 @@ Course.belongsTo(Images, { foreignKey: 'thub_uid', as: 'thub' });
 
 Course.belongsTo(User, { foreignKey: 'user_uid', as: 'admin' });
 
-Subscription.belongsTo(Course,{ foreignKey: 'lesson_uid'});
+Subscription.belongsTo(Course, { foreignKey: 'lesson_uid' });
 
 
-module.exports = { User, UserDetails,Course,Subscription };
+module.exports = {
+  User, UserDetails, Course, Subscription,
+};

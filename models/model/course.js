@@ -3,7 +3,7 @@ import Sequelize from 'sequelize';
 module.exports = sequelize.define('lessons', {
   uid: { type: Sequelize.CHAR, primaryKey: true },
   user_uid: Sequelize.CHAR,
-  dates_uid: Sequelize.CHAR,//equal user_uid
+  dates_uid: Sequelize.CHAR, // equal user_uid
 
   thub_uid: { type: Sequelize.CHAR, defaultValue: 'default' },
   banner_uid: { type: Sequelize.CHAR, defaultValue: 'default' },
