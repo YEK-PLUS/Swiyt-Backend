@@ -38,3 +38,9 @@ export const IncludeCourse = [
     as: 'thub',
   },
 ];
+export const IncludeSubscription = [
+  {
+    model:Course,
+    include:IncludeCourse,
+  }
+];
