@@ -1,7 +1,6 @@
 import _ from 'lodash';
-import * as UserFilters from './user';
+import {FilterUser, FilterImage} from './user';
 
-const { FilterUser, FilterImage } = UserFilters;
 export const FilterCourse = (CourseModel) => {
   const course = CourseModel.toJSON();
   const filteredCourse = _.pick(course, [
