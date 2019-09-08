@@ -30,13 +30,13 @@ export const FilterUserDetails = (UserDetailsModel) => {
     'title',
     'picture_uid',
     'banner_uid',
-    'links',
     'referance',
     'portfolio',
     'certificates',
     'experience',
     'education',
   ]);
+  filteredUserDetails.links = JSON.parse(UserDetails.links)
   filteredUserDetails.banner = FilterImage(UserDetailsModel.banner);
   filteredUserDetails.picture = FilterImage(UserDetailsModel.picture);
   return filteredUserDetails;
