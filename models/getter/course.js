@@ -11,5 +11,6 @@ export const Subscriptions = (userUid) => Subscription.findAll({
   where: {
     user_uid: userUid,
   },
+  limit: 5,
   include: IncludeSubscription,
 });
