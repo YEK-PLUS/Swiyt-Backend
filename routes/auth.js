@@ -76,7 +76,6 @@ router.post('/register', (req, res) => {
     }
     const buildUserBannerCdn = {
       uid:bannerUidCdn,
-      url:"https://dummyimage.com/600x300/141414/fff&text="+username
     }
     Cdn.build(buildUserAvatarCdn).save();
     Cdn.build(buildUserBannerCdn).save();
