@@ -3,11 +3,16 @@ import auth from '../middlewares/auth';
 import Models from '../models';
 
 const {
-  PopulerCourses, Subscriptions, FilterCourse, FilterSubscription,
+  PopulerCourses,AllPopulerCourses, Subscriptions, FilterCourse, FilterSubscription,
 } = Models;
 const router = Router();
 
 router.post('/populer', (req, res) => PopulerCourses().then((courses) => {
+  const a = [];
+  courses.map((b) => a.push(FilterCourse(b)));
+  return res.status(200).send(a).end();
+}));
+router.post('/populer/all', (req, res) => AllPopulerCourses().then((courses) => {
   const a = [];
   courses.map((b) => a.push(FilterCourse(b)));
   return res.status(200).send(a).end();
