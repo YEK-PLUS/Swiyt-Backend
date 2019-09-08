@@ -22,7 +22,29 @@ export const IncludeUserDetail = {
   ],
 };
 export const IncludeUser = [IncludeImage];
+export const IncludeUserCourses = {
+  model: Course,
+  include:[
+    {
+      model: User,
+      include: {
+        model: Images,
+        include: Cdn,
+      },
+      as: 'admin',
+    },
+    {
+      ...IncludeImage,
+      as: 'banner',
+    },
+    {
+      ...IncludeImage,
+      as: 'thub',
+    },
+  ]
+};
 export const IncludeUserAndUserDetails = [IncludeImage, IncludeUserDetail];
+export const IncludeUserAndUserDetailsAndUserCourses = [IncludeImage, IncludeUserDetail,IncludeUserCourses];
 export const IncludeCourse = [
   {
     model: User,

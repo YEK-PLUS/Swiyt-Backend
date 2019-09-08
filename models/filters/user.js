@@ -1,5 +1,5 @@
 import _ from 'lodash';
-
+import {FilterCourse} from './course';
 export const FilterImage = (ImageModel) => {
   const image = ImageModel.toJSON();
   const filteredImage = _.pick(image, [
@@ -52,5 +52,11 @@ export const FilterUser = (userModel) => {
 export const FilterUserAndUserDetails = (userModel) => {
   const filteredUser = FilterUser(userModel);
   filteredUser.user_details = FilterUserDetails(userModel.user_detail);
+  return filteredUser;
+};
+export const FilterUserAndUserDetailsAndUserCourse = (userModel) => {
+  const filteredUser = FilterUserAndUserDetails(userModel);
+  filteredUser.lessons = [];
+  userModel.lessons.map(course => filteredUser.lessons.push(FilterCourse(course)));
   return filteredUser;
 };
