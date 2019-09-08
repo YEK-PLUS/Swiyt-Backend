@@ -20,8 +20,8 @@ module.exports = sequelize.define('user_details', {
   location: Sequelize.STRING,
   title: Sequelize.STRING,
 
-  picture_uid: { type: Sequelize.CHAR, defaultValue: 'default' },
-  banner_uid: { type: Sequelize.CHAR, defaultValue: 'default' },
+  picture_uid: Sequelize.CHAR,
+  banner_uid: Sequelize.CHAR,
 
   links: Sequelize.STRING,
   referance: Sequelize.STRING,
