@@ -1,7 +1,7 @@
 import User from '../model/user';
 import * as Includes from '../includes';
 
-const { IncludeUser } = Includes;
+const { IncludeUser,IncludeUserAndUserDetails } = Includes;
 export const JustUser = (username, password) => User.findOne({
   where: {
     username,
@@ -20,4 +20,11 @@ export const JustUserWithUserName = (username) => User.findOne({
     username,
   },
   include: IncludeUser,
+});
+export const JustUserDetailsWithUserName = (username) => User.findOne({
+  where: sequelize.where(
+    sequelize.fn('lower', sequelize.col('username')),
+    sequelize.fn('lower', username)
+  ),
+  include: IncludeUserAndUserDetails,
 });
