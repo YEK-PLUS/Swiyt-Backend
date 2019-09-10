@@ -9,6 +9,10 @@ export const JustUser = (username, password) => User.findOne({
   },
   include: IncludeUser,
 });
+export const JustPopulerUser = () => User.findAll({
+  include: IncludeUser,
+  limit: 5 
+});
 export const JustUserWithUid = (uid) => User.findOne({
   where: {
     uid,
