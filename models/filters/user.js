@@ -60,3 +60,9 @@ export const FilterUserAndUserDetailsAndUserCourse = (userModel) => {
   userModel.lessons.map(course => filteredUser.lessons.push(FilterCourse(course)));
   return filteredUser;
 };
+export const FilterUserAndUserCourse = (userModel) => {
+  const filteredUser = FilterUser(userModel);
+  filteredUser.lessons = [];
+  userModel.lessons.map(course => filteredUser.lessons.push(FilterCourse(course)));
+  return filteredUser;
+};
