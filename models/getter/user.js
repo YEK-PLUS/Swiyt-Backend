@@ -1,7 +1,7 @@
 import User from '../model/user';
 import * as Includes from '../includes';
 
-const { IncludeUser,IncludeUserAndUserDetailsAndUserCourses } = Includes;
+const { IncludeUser,IncludeUserAndUserDetailsAndUserCourses,IncludeUserCourses } = Includes;
 export const JustUser = (username, password) => User.findOne({
   where: {
     username,
@@ -11,7 +11,18 @@ export const JustUser = (username, password) => User.findOne({
 });
 export const JustPopulerUser = () => User.findAll({
   include: IncludeUser,
-  limit: 5 
+  limit: 5,
+
+});
+export const JustPopulerUserAndCourses = () => User.findAndCountAll({
+  include: [
+    ...IncludeUser,
+    {
+      ...IncludeUserCourses,
+      required: true
+    }
+],
+  limit: 5,
 });
 export const JustUserWithUid = (uid) => User.findOne({
   where: {
