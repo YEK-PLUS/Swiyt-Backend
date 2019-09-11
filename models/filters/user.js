@@ -51,18 +51,24 @@ export const FilterUser = (userModel) => {
 };
 export const FilterUserAndUserDetails = (userModel) => {
   const filteredUser = FilterUser(userModel);
-  filteredUser.user_details = FilterUserDetails(userModel.user_detail);
+  if(userModel.user_detail){
+    filteredUser.user_details = FilterUserDetails(userModel.user_detail);
+  }
   return filteredUser;
 };
 export const FilterUserAndUserDetailsAndUserCourse = (userModel) => {
   const filteredUser = FilterUserAndUserDetails(userModel);
   filteredUser.lessons = [];
-  userModel.lessons.map(course => filteredUser.lessons.push(FilterCourse(course)));
+  if(userModel.lessons){
+    userModel.lessons.map(course => filteredUser.lessons.push(FilterCourse(course)));
+  }
   return filteredUser;
 };
 export const FilterUserAndUserCourse = (userModel) => {
   const filteredUser = FilterUser(userModel);
   filteredUser.lessons = [];
-  userModel.lessons.map(course => filteredUser.lessons.push(FilterCourse(course)));
+  if(userModel.lessons){
+    userModel.lessons.map(course => filteredUser.lessons.push(FilterCourse(course)));
+  }
   return filteredUser;
 };
