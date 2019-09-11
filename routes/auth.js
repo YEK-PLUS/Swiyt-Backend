@@ -5,7 +5,7 @@ import auth from '../middlewares/auth';
 import Models from '../models';
 
 const {
-  JustUser, JustUserWithUserName, User, UserDetails, FilterUser,Cdn,Images
+  JustUser, JustUserWithUserName, User, UserDetails, FilterUser, Cdn, Images,
 } = Models;
 const router = Router();
 
@@ -54,29 +54,29 @@ router.post('/register', (req, res) => {
       uid,
       username,
       password,
-      avatar_uid:avatarUid,
+      avatar_uid: avatarUid,
     };
     const buildUserDetails = {
       uid,
       mail,
-      picture_uid:avatarUid,
-      banner_uid:bannerUid,
+      picture_uid: avatarUid,
+      banner_uid: bannerUid,
     };
     const buildUserAvatarImage = {
-      uid:avatarUid,
-      cdn_uid:avatarUidCdn
-    }
+      uid: avatarUid,
+      cdn_uid: avatarUidCdn,
+    };
     const buildUserAvatarCdn = {
-      uid:avatarUidCdn,
-      url:"https://dummyimage.com/400x400/141414/fff&text="+username.substring(0,2)
-    }
+      uid: avatarUidCdn,
+      url: `https://dummyimage.com/400x400/141414/fff&text=${username.substring(0, 2)}`,
+    };
     const buildUserBannerImage = {
-      uid:bannerUid,
-      cdn_uid:bannerUidCdn
-    }
+      uid: bannerUid,
+      cdn_uid: bannerUidCdn,
+    };
     const buildUserBannerCdn = {
-      uid:bannerUidCdn,
-    }
+      uid: bannerUidCdn,
+    };
     Cdn.build(buildUserAvatarCdn).save();
     Cdn.build(buildUserBannerCdn).save();
 

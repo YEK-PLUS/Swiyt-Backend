@@ -24,7 +24,7 @@ export const IncludeUserDetail = {
 export const IncludeUser = [IncludeImage];
 export const IncludeUserCourses = {
   model: Course,
-  include:[
+  include: [
     {
       model: User,
       include: {
@@ -41,10 +41,10 @@ export const IncludeUserCourses = {
       ...IncludeImage,
       as: 'thub',
     },
-  ]
+  ],
 };
 export const IncludeUserAndUserDetails = [IncludeImage, IncludeUserDetail];
-export const IncludeUserAndUserDetailsAndUserCourses = [IncludeImage, IncludeUserDetail,IncludeUserCourses];
+export const IncludeUserAndUserDetailsAndUserCourses = [IncludeImage, IncludeUserDetail, IncludeUserCourses];
 export const IncludeCourse = [
   {
     model: User,

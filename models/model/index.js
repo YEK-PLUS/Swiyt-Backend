@@ -19,11 +19,11 @@ Course.belongsTo(Images, { foreignKey: 'banner_uid', as: 'banner' });
 Course.belongsTo(Images, { foreignKey: 'thub_uid', as: 'thub' });
 
 Course.belongsTo(User, { foreignKey: 'user_uid', as: 'admin' });
-User.hasMany(Course,{ foreignKey: 'user_uid'});
+User.hasMany(Course, { foreignKey: 'user_uid' });
 
 Subscription.belongsTo(Course, { foreignKey: 'lesson_uid' });
 
 
 module.exports = {
-  User, UserDetails, Course, Subscription,Cdn,Images,References
+  User, UserDetails, Course, Subscription, Cdn, Images, References,
 };

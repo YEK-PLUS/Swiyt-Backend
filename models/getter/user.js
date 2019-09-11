@@ -1,7 +1,7 @@
 import User from '../model/user';
 import * as Includes from '../includes';
 
-const { IncludeUser,IncludeUserAndUserDetailsAndUserCourses,IncludeUserCourses } = Includes;
+const { IncludeUser, IncludeUserAndUserDetailsAndUserCourses, IncludeUserCourses } = Includes;
 export const JustUser = (username, password) => User.findOne({
   where: {
     username,
@@ -19,9 +19,9 @@ export const JustPopulerUserAndCourses = () => User.findAndCountAll({
     ...IncludeUser,
     {
       ...IncludeUserCourses,
-      required: true
-    }
-],
+      required: true,
+    },
+  ],
   limit: 5,
 });
 export const JustAllPopulerUserAndCourses = () => User.findAndCountAll({
@@ -29,9 +29,9 @@ export const JustAllPopulerUserAndCourses = () => User.findAndCountAll({
     ...IncludeUser,
     {
       ...IncludeUserCourses,
-      required: true
-    }
-],
+      required: true,
+    },
+  ],
   limit: 5,
 });
 export const JustUserWithUid = (uid) => User.findOne({
@@ -49,7 +49,7 @@ export const JustUserWithUserName = (username) => User.findOne({
 export const JustUserDetailsAndCourseWithUserName = (username) => User.findOne({
   where: sequelize.where(
     sequelize.fn('lower', sequelize.col('username')),
-    sequelize.fn('lower', username)
+    sequelize.fn('lower', username),
   ),
   include: IncludeUserAndUserDetailsAndUserCourses,
 });

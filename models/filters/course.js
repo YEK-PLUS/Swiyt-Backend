@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import {FilterUser, FilterImage} from './user';
+import { FilterUser, FilterImage } from './user';
 
 export const FilterCourse = (CourseModel) => {
   const course = CourseModel.toJSON();

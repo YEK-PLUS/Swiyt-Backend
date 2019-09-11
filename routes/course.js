@@ -3,7 +3,7 @@ import auth from '../middlewares/auth';
 import Models from '../models';
 
 const {
-  PopulerCourses,AllPopulerCourses, Subscriptions,AllSubscriptions, FilterCourse, FilterSubscription,
+  PopulerCourses, AllPopulerCourses, Subscriptions, AllSubscriptions, FilterCourse, FilterSubscription,
 } = Models;
 const router = Router();
 

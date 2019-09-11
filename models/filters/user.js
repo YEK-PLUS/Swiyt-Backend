@@ -1,5 +1,6 @@
 import _ from 'lodash';
-import {FilterCourse} from './course';
+import { FilterCourse } from './course';
+
 export const FilterImage = (ImageModel) => {
   const image = ImageModel.toJSON();
   const filteredImage = _.pick(image, [
@@ -31,12 +32,12 @@ export const FilterUserDetails = (UserDetailsModel) => {
     'picture_uid',
     'banner_uid',
   ]);
-  filteredUserDetails.links = JSON.parse(UserDetails.links)
-  filteredUserDetails.referance = JSON.parse(UserDetails.referance)
-  filteredUserDetails.portfolio = JSON.parse(UserDetails.portfolio)
-  filteredUserDetails.education = JSON.parse(UserDetails.education)
-  filteredUserDetails.experience = JSON.parse(UserDetails.experience)
-  filteredUserDetails.certificates = JSON.parse(UserDetails.certificates)
+  filteredUserDetails.links = JSON.parse(UserDetails.links);
+  filteredUserDetails.referance = JSON.parse(UserDetails.referance);
+  filteredUserDetails.portfolio = JSON.parse(UserDetails.portfolio);
+  filteredUserDetails.education = JSON.parse(UserDetails.education);
+  filteredUserDetails.experience = JSON.parse(UserDetails.experience);
+  filteredUserDetails.certificates = JSON.parse(UserDetails.certificates);
   filteredUserDetails.banner = FilterImage(UserDetailsModel.banner);
   filteredUserDetails.picture = FilterImage(UserDetailsModel.picture);
   return filteredUserDetails;
@@ -51,7 +52,7 @@ export const FilterUser = (userModel) => {
 };
 export const FilterUserAndUserDetails = (userModel) => {
   const filteredUser = FilterUser(userModel);
-  if(userModel.user_detail){
+  if (userModel.user_detail) {
     filteredUser.user_details = FilterUserDetails(userModel.user_detail);
   }
   return filteredUser;
@@ -59,16 +60,16 @@ export const FilterUserAndUserDetails = (userModel) => {
 export const FilterUserAndUserDetailsAndUserCourse = (userModel) => {
   const filteredUser = FilterUserAndUserDetails(userModel);
   filteredUser.lessons = [];
-  if(userModel.lessons){
-    userModel.lessons.map(course => filteredUser.lessons.push(FilterCourse(course)));
+  if (userModel.lessons) {
+    userModel.lessons.map((course) => filteredUser.lessons.push(FilterCourse(course)));
   }
   return filteredUser;
 };
 export const FilterUserAndUserCourse = (userModel) => {
   const filteredUser = FilterUser(userModel);
   filteredUser.lessons = [];
-  if(userModel.lessons){
-    userModel.lessons.map(course => filteredUser.lessons.push(FilterCourse(course)));
+  if (userModel.lessons) {
+    userModel.lessons.map((course) => filteredUser.lessons.push(FilterCourse(course)));
   }
   return filteredUser;
 };
