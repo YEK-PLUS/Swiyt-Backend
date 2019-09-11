@@ -4,9 +4,11 @@ import Images from './images';
 import Cdn from './cdn';
 import Course from './course';
 import Subscription from './subscription';
+import References from './references';
 
 User.belongsTo(UserDetails, { foreignKey: 'uid' });
 
+References.belongsTo(Images, { foreignKey: 'images_uid' });
 User.belongsTo(Images, { foreignKey: 'avatar_uid' });
 Images.belongsTo(Cdn, { foreignKey: 'cdn_uid' });
 
@@ -23,5 +25,5 @@ Subscription.belongsTo(Course, { foreignKey: 'lesson_uid' });
 
 
 module.exports = {
-  User, UserDetails, Course, Subscription,Cdn,Images
+  User, UserDetails, Course, Subscription,Cdn,Images,References
 };
