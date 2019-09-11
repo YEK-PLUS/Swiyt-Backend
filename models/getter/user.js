@@ -24,6 +24,16 @@ export const JustPopulerUserAndCourses = () => User.findAndCountAll({
 ],
   limit: 5,
 });
+export const JustAllPopulerUserAndCourses = () => User.findAndCountAll({
+  include: [
+    ...IncludeUser,
+    {
+      ...IncludeUserCourses,
+      required: true
+    }
+],
+  limit: 5,
+});
 export const JustUserWithUid = (uid) => User.findOne({
   where: {
     uid,
