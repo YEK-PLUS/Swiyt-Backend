@@ -3,7 +3,11 @@ import auth from '../middlewares/auth';
 import Models from '../models';
 
 const {
-  JustUserDetailsAndCourseWithUserName, FilterUserAndUserDetailsAndUserCourse, JustAllPopulerUserAndCourses, JustPopulerUserAndCourses, FilterUserAndUserCourse,
+  JustUserDetailsAndCourseWithUserName,
+  FilterUserAndUserDetailsAndUserCourse,
+  JustAllPopulerUserAndCourses,
+  JustPopulerUserAndCourses,
+  FilterUserAndUserCourse,
 } = Models;
 const router = Router();
 
