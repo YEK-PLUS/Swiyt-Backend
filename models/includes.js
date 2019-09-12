@@ -47,7 +47,7 @@ export const IncludeUserAndUserDetails = [IncludeImage, IncludeUserDetail];
 export const IncludeUserAndUserDetailsAndUserCourses = [
   IncludeImage,
   IncludeUserDetail,
-  IncludeUserCourses
+  IncludeUserCourses,
 ];
 export const IncludeCourse = [
   {
