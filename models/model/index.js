@@ -5,10 +5,12 @@ import Cdn from './cdn';
 import Course from './course';
 import Subscription from './subscription';
 import References from './references';
+import SwiytComments from './swiytComments';
 
 User.belongsTo(UserDetails, { foreignKey: 'uid' });
 
 References.belongsTo(Images, { foreignKey: 'images_uid' });
+SwiytComments.belongsTo(Images, { foreignKey: 'images_uid' });
 User.belongsTo(Images, { foreignKey: 'avatar_uid' });
 Images.belongsTo(Cdn, { foreignKey: 'cdn_uid' });
 
