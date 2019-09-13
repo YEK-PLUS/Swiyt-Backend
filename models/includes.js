@@ -3,6 +3,26 @@ import Images from './model/images';
 import Cdn from './model/cdn';
 import UserDetails from './model/userDetails';
 import Course from './model/course';
+import Category from './model/category';
+import CategoryConnector from './model/categoryConnector';
+import HasCategories from './model/hasCategory';
+export const IncludeJustCategory = {
+    model:Category,
+    include:{
+      model:CategoryConnector,
+      include:{
+        model:Category,
+        include:{
+          model:CategoryConnector,
+          include:Category
+        }
+      }
+    }
+}
+export const IncludeCategory = {
+  model:HasCategories,
+  include:IncludeJustCategory
+}
 
 export const IncludeImage = {
   model: Images,
@@ -22,27 +42,7 @@ export const IncludeUserDetail = {
   ],
 };
 export const IncludeUser = [IncludeImage];
-export const IncludeUserCourses = {
-  model: Course,
-  include: [
-    {
-      model: User,
-      include: {
-        model: Images,
-        include: Cdn,
-      },
-      as: 'admin',
-    },
-    {
-      ...IncludeImage,
-      as: 'banner',
-    },
-    {
-      ...IncludeImage,
-      as: 'thub',
-    },
-  ],
-};
+
 export const IncludeUserAndUserDetails = [IncludeImage, IncludeUserDetail];
 export const IncludeUserAndUserDetailsAndUserCourses = [
   IncludeImage,
@@ -52,7 +52,7 @@ export const IncludeUserAndUserDetailsAndUserCourses = [
 export const IncludeCourse = [
   {
     model: User,
-    include: IncludeUser,
+    include: [{...IncludeImage}],
     as: 'admin',
   },
   {
@@ -63,7 +63,14 @@ export const IncludeCourse = [
     ...IncludeImage,
     as: 'thub',
   },
+  {
+    ...IncludeCategory
+  },
 ];
+export const IncludeUserCourses = {
+  model: Course,
+  include: [...IncludeCourse]
+};
 export const IncludeSubscription = [
   {
     model: Course,

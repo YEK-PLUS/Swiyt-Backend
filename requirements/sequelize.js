@@ -1,5 +1,4 @@
 import Sequelize from 'sequelize';
-
 const {
   dbname, username, password, host, dialect,
 } = key.database;

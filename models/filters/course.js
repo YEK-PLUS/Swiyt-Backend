@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import { FilterUser, FilterImage } from './user';
+import { FilterCategory } from './others';
 
 export const FilterCourse = (CourseModel) => {
   const course = CourseModel.toJSON();
@@ -16,6 +17,8 @@ export const FilterCourse = (CourseModel) => {
   filteredCourse.admin = FilterUser(CourseModel.admin);
   filteredCourse.banner = FilterImage(CourseModel.banner);
   filteredCourse.thub = FilterImage(CourseModel.thub);
+  filteredCourse.category = [];
+  CourseModel.has_categories.map((course) => filteredCourse.category.push(FilterCategory(course)));
   return filteredCourse;
 };
 export const FilterSubscription = (SubscriptionModel) => {
