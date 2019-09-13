@@ -12,7 +12,10 @@ const {
 const router = Router();
 
 router.post('/userDetails', (req, res) => JustUserDetailsAndCourseWithUserName(req.body.username).then((userDetail) => {
-  res.status(200).send(FilterUserAndUserDetailsAndUserCourse(userDetail)).end();
+  if(!userDetail){
+    return res.status(200).send(key.returns.userNotFound).end();
+  }
+  return res.status(200).send(FilterUserAndUserDetailsAndUserCourse(userDetail)).end();
 }));
 router.post('/populer/all', (req, res) => JustAllPopulerUserAndCourses().then((usersModel) => {
   const users = [];
