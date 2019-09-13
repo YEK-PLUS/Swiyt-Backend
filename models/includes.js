@@ -6,23 +6,24 @@ import Course from './model/course';
 import Category from './model/category';
 import CategoryConnector from './model/categoryConnector';
 import HasCategories from './model/hasCategory';
+
 export const IncludeJustCategory = {
-    model:Category,
-    include:{
-      model:CategoryConnector,
-      include:{
-        model:Category,
-        include:{
-          model:CategoryConnector,
-          include:Category
-        }
-      }
-    }
-}
+  model: Category,
+  include: {
+    model: CategoryConnector,
+    include: {
+      model: Category,
+      include: {
+        model: CategoryConnector,
+        include: Category,
+      },
+    },
+  },
+};
 export const IncludeCategory = {
-  model:HasCategories,
-  include:IncludeJustCategory
-}
+  model: HasCategories,
+  include: IncludeJustCategory,
+};
 
 export const IncludeImage = {
   model: Images,
@@ -52,7 +53,7 @@ export const IncludeUserAndUserDetailsAndUserCourses = [
 export const IncludeCourse = [
   {
     model: User,
-    include: [{...IncludeImage}],
+    include: [{ ...IncludeImage }],
     as: 'admin',
   },
   {
@@ -64,12 +65,12 @@ export const IncludeCourse = [
     as: 'thub',
   },
   {
-    ...IncludeCategory
+    ...IncludeCategory,
   },
 ];
 export const IncludeUserCourses = {
   model: Course,
-  include: [...IncludeCourse]
+  include: [...IncludeCourse],
 };
 export const IncludeSubscription = [
   {

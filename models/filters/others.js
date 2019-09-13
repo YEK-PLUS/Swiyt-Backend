@@ -27,11 +27,11 @@ export const FilterCategory = (CategoryModel) => {
     'uid',
     'name',
   ]);
-  let filterCategory = filter(category);
-  if(category.categories_connector){
+  const filterCategory = filter(category);
+  if (category.categories_connector) {
     filterCategory.parent = filter(category.categories_connector.category);
   }
-  if(category.categories_connector.category.categories_connector){
+  if (category.categories_connector.category.categories_connector) {
     filterCategory.parent.parent = filter(category.categories_connector.category.categories_connector.category);
   }
   return filterCategory;

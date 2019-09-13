@@ -30,9 +30,9 @@ User.hasMany(Course, { foreignKey: 'user_uid' });
 
 Subscription.belongsTo(Course, { foreignKey: 'lesson_uid' });
 
-HasCategories.belongsTo(Category, { foreignKey:'category_uid' });
-Category.belongsTo(CategoryConnector, { foreignKey:'uid',targetKey:'from_uid' });
-CategoryConnector.belongsTo(Category, { foreignKey:'to_uid',targetKey:'uid' });
+HasCategories.belongsTo(Category, { foreignKey: 'category_uid' });
+Category.belongsTo(CategoryConnector, { foreignKey: 'uid', targetKey: 'from_uid' });
+CategoryConnector.belongsTo(Category, { foreignKey: 'to_uid', targetKey: 'uid' });
 
 module.exports = {
   User, UserDetails, Course, Subscription, Cdn, Images, References,

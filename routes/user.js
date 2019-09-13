@@ -12,7 +12,7 @@ const {
 const router = Router();
 
 router.post('/userDetails', (req, res) => JustUserDetailsAndCourseWithUserName(req.body.username).then((userDetail) => {
-  if(!userDetail){
+  if (!userDetail) {
     return res.status(200).send(key.returns.userNotFound).end();
   }
   return res.status(200).send(FilterUserAndUserDetailsAndUserCourse(userDetail)).end();

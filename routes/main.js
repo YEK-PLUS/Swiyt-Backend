@@ -2,7 +2,7 @@ import { Router } from 'express';
 import Models from '../models';
 
 const {
-  AllReferences, FilterReferance,AllSwiytComments,FilterSwiytComment
+  AllReferences, FilterReferance, AllSwiytComments, FilterSwiytComment,
 } = Models;
 
 const router = Router();
