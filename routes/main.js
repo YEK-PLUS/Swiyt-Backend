@@ -7,7 +7,7 @@ const {
 
 const router = Router();
 router.get('/', (req, res) => {
-  res.status(200).send("it's working");
+  res.status(200).send("powered by YEK, it's working");
 });
 router.post('/references', (req, res) => AllReferences().then((references) => {
   const returnReferences = [];
