@@ -10,7 +10,7 @@ const {
   FilterCourse,
   FilterSubscription,
   CourseDetail,
-  FilterUserAndUserCourse
+  FilterUserAndUserCourse,
 } = Models;
 const router = Router();
 
@@ -34,7 +34,5 @@ router.post('/subscriptions/all', auth, (req, res) => AllSubscriptions(req.user.
   subscriptions.map((b) => a.push(FilterSubscription(b)));
   return res.status(200).send(a).end();
 }));
-router.post('/', (req, res) => CourseDetail(req.body.user,req.body.course).then((course) => {
-  return res.status(200).send(FilterUserAndUserCourse(course)).end();
-}));
+router.post('/', (req, res) => CourseDetail(req.body.user, req.body.course).then((course) => res.status(200).send(FilterUserAndUserCourse(course)).end()));
 module.exports = router;

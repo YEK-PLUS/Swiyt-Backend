@@ -47,18 +47,16 @@ router.post('/register', (req, res) => {
     const avatarUid = uuid();
     const avatarUidCdn = uuid();
 
-    const bannerUid = uuid();
-    const bannerUidCdn = uuid();
 
     const buildUser = {
-      uid:uid,
-      username:username,
-      password:password,
+      uid,
+      username,
+      password,
       avatar_uid: avatarUid,
     };
     const buildUserDetails = {
-      uid:uid,
-      mail:mail,
+      uid,
+      mail,
       picture_uid: avatarUid,
     };
     const buildUserAvatarImage = {

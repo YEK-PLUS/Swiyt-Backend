@@ -32,7 +32,9 @@ export const FilterCategory = (CategoryModel) => {
     filterCategory.parent = filter(category.categories_connector.category);
   }
   if (category.categories_connector.category.categories_connector) {
-    filterCategory.parent.parent = filter(category.categories_connector.category.categories_connector.category);
+    filterCategory.parent.parent = filter(
+      category.categories_connector.category.categories_connector.category,
+    );
   }
   return filterCategory;
 };

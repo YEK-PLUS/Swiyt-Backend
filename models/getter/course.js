@@ -3,7 +3,9 @@ import User from '../model/user';
 import Subscription from '../model/subscription';
 import * as Includes from '../includes';
 
-const { IncludeCourse, IncludeSubscription,IncludeImage,IncludeUserCourses } = Includes;
+const {
+  IncludeCourse, IncludeSubscription, IncludeImage, IncludeUserCourses,
+} = Includes;
 export const PopulerCourses = () => Course.findAll({
   limit: 5,
   include: IncludeCourse,
@@ -24,7 +26,7 @@ export const AllSubscriptions = (userUid) => Subscription.findAll({
   },
   include: IncludeSubscription,
 });
-export const CourseDetail = (username,nick) => User.findOne({
+export const CourseDetail = (username, nick) => User.findOne({
   where: sequelize.where(
     sequelize.fn('lower', sequelize.col('username')),
     sequelize.fn('lower', username),
@@ -34,11 +36,11 @@ export const CourseDetail = (username,nick) => User.findOne({
       ...IncludeUserCourses,
       where: sequelize.where(
         sequelize.fn('lower', sequelize.col('name')),
-        sequelize.fn('lower', nick.replace(`-`,` `)),
+        sequelize.fn('lower', nick.replace('-', ' ')),
       ),
     },
     {
-      ...IncludeImage
-    }
-  ]
+      ...IncludeImage,
+    },
+  ],
 });
