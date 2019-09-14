@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import jwt from 'jsonwebtoken';
-import uuid from 'uuid/v1';
+import uuid from 'uuid/v4';
 import auth from '../middlewares/auth';
 import Models from '../models';
 
@@ -51,16 +51,15 @@ router.post('/register', (req, res) => {
     const bannerUidCdn = uuid();
 
     const buildUser = {
-      uid,
-      username,
-      password,
+      uid:uid,
+      username:username,
+      password:password,
       avatar_uid: avatarUid,
     };
     const buildUserDetails = {
-      uid,
-      mail,
+      uid:uid,
+      mail:mail,
       picture_uid: avatarUid,
-      banner_uid: bannerUid,
     };
     const buildUserAvatarImage = {
       uid: avatarUid,
@@ -70,18 +69,9 @@ router.post('/register', (req, res) => {
       uid: avatarUidCdn,
       url: `https://dummyimage.com/400x400/141414/fff&text=${username.substring(0, 2)}`,
     };
-    const buildUserBannerImage = {
-      uid: bannerUid,
-      cdn_uid: bannerUidCdn,
-    };
-    const buildUserBannerCdn = {
-      uid: bannerUidCdn,
-    };
     Cdn.build(buildUserAvatarCdn).save();
-    Cdn.build(buildUserBannerCdn).save();
 
     Images.build(buildUserAvatarImage).save();
-    Images.build(buildUserBannerImage).save();
 
     User.build(buildUser).save();
     UserDetails.build(buildUserDetails).save();
