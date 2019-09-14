@@ -17,11 +17,7 @@ export const FilterCourse = (CourseModel) => {
   filteredCourse.admin = FilterUser(CourseModel.admin);
   filteredCourse.banner = FilterImage(CourseModel.banner);
   filteredCourse.thub = FilterImage(CourseModel.thub);
-  filteredCourse.category = [];
-  CourseModel.has_categories.map((courseMap) => {
-    filteredCourse.category.push(FilterCategory(courseMap));
-    return filteredCourse;
-  });
+  filteredCourse.category = FilterCategory(CourseModel.has_category)
   return filteredCourse;
 };
 export const FilterSubscription = (SubscriptionModel) => {
