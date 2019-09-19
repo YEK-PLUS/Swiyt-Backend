@@ -3,6 +3,7 @@ import Images from './model/images';
 import Cdn from './model/cdn';
 import UserDetails from './model/userDetails';
 import Course from './model/course';
+import Comment from './model/comment';
 import Category from './model/category';
 import CategoryConnector from './model/categoryConnector';
 import HasCategories from './model/hasCategory';
@@ -62,6 +63,15 @@ export const IncludeCourse = [
   {
     ...IncludeCategory,
   },
+  {
+    model: Comment,
+    include: [
+      {
+        model: User,
+        include: [{ ...IncludeImage }],
+      },
+    ],
+  },
 ];
 export const IncludeUserCourses = {
   model: Course,
@@ -72,7 +82,6 @@ export const IncludeUserAndUserDetailsAndUserCourses = [
   IncludeUserDetail,
   IncludeUserCourses,
 ];
-
 
 export const IncludeSubscription = [
   {

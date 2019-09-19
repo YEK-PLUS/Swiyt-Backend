@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { FilterImage } from './user';
+import { FilterImage, FilterUser } from './user';
 
 export const FilterReferance = (referenceModel) => {
   const course = referenceModel.toJSON();
@@ -10,6 +10,15 @@ export const FilterReferance = (referenceModel) => {
   ]);
   filteredReference.image = FilterImage(referenceModel.image);
   return filteredReference;
+};
+export const FilterComment = (CommentModel) => {
+  const comment = CommentModel.toJSON();
+  const filteredComment = _.pick(comment, [
+    'uid',
+    'comment',
+  ]);
+  filteredComment.user = FilterUser(CommentModel.user);
+  return filteredComment;
 };
 export const FilterSwiytComment = (referenceModel) => {
   const course = referenceModel.toJSON();

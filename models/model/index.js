@@ -7,6 +7,7 @@ import Subscription from './subscription';
 import References from './references';
 import SwiytComments from './swiytComments';
 import Category from './category';
+import Comment from './comment';
 import CategoryConnector from './categoryConnector';
 import HasCategories from './hasCategory';
 
@@ -24,9 +25,13 @@ UserDetails.belongsTo(Images, { foreignKey: 'banner_uid', as: 'banner' });
 Course.belongsTo(Images, { foreignKey: 'banner_uid', as: 'banner' });
 Course.belongsTo(Images, { foreignKey: 'thub_uid', as: 'thub' });
 Course.hasOne(HasCategories, { foreignKey: 'from_uid' });
+Comment.belongsTo(Course, { foreignKey: 'lessons_uid' });
+Course.hasMany(Comment, { foreignKey: 'lessons_uid' });
 
 Course.belongsTo(User, { foreignKey: 'user_uid', as: 'admin' });
 User.hasMany(Course, { foreignKey: 'user_uid' });
+Comment.belongsTo(User, { foreignKey: 'users_uid' });
+User.hasMany(Comment, { foreignKey: 'users_uid' });
 
 Subscription.belongsTo(Course, { foreignKey: 'lesson_uid' });
 
