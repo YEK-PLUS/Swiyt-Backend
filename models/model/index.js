@@ -33,7 +33,10 @@ User.hasMany(Course, { foreignKey: 'user_uid' });
 Comment.belongsTo(User, { foreignKey: 'users_uid' });
 User.hasMany(Comment, { foreignKey: 'users_uid' });
 
+Subscription.belongsTo(User, { foreignKey: 'user_uid' });
+User.hasMany(Subscription, { foreignKey: 'user_uid' });
 Subscription.belongsTo(Course, { foreignKey: 'lesson_uid' });
+Course.hasMany(Subscription, { foreignKey: 'lesson_uid' });
 
 HasCategories.belongsTo(Category, { foreignKey: 'category_uid' });
 Category.belongsTo(CategoryConnector, { foreignKey: 'uid', targetKey: 'from_uid' });
