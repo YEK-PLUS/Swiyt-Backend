@@ -32,3 +32,12 @@ export const FilterSubscription = (SubscriptionModel) => {
   filteredSubscriptions.lesson = FilterCourse(SubscriptionModel.lesson);
   return filteredSubscriptions;
 };
+export const FilterSubscriptionUser = (SubscriptionModel) => {
+  const subscriptions = SubscriptionModel.toJSON();
+  const filteredSubscriptions = _.pick(subscriptions, [
+    'uid',
+    'user_uid',
+    'lesson_uid',
+  ]);
+  return filteredSubscriptions;
+};
