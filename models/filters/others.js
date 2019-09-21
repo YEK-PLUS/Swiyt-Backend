@@ -21,6 +21,16 @@ export const FilterComment = (CommentModel) => {
   filteredComment.user = FilterUser(CommentModel.user);
   return filteredComment;
 };
+export const FilterWishList = (WishListModel) => {
+  const wishList = WishListModel.toJSON();
+  const filteredWishList = _.pick(wishList, [
+    'uid',
+    'lessons_uid',
+    'users_uid',
+    'wish_list',
+  ]);
+  return filteredWishList;
+};
 export const FilterSwiytComment = (referenceModel) => {
   const course = referenceModel.toJSON();
   const filteredReference = _.pick(course, [
