@@ -4,7 +4,7 @@ import Subscription from '../model/subscription';
 import * as Includes from '../includes';
 
 const {
-  IncludeCourse, IncludeSubscription, IncludeImage, IncludeUserCourses, IncludeComments,
+  IncludeCourse, IncludeSubscription, IncludeImage, IncludeUserCourses,
 } = Includes;
 export const PopulerCourses = () => Course.findAll({
   limit: 5,

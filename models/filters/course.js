@@ -15,11 +15,12 @@ export const FilterCourse = (CourseModel) => {
     'lenght',
   ]);
   filteredCourse.comments = [];
-  let rates = [];
+  const rates = [];
   filteredCourse.subscriptions = _.size(CourseModel.subscriptions);
   CourseModel.lesson_comments.map((comment) => {
     filteredCourse.comments.push(FilterComment(comment));
     rates.push(comment.star);
+    return true;
   });
   filteredCourse.rate = _.mean(rates);
   filteredCourse.admin = FilterUser(CourseModel.admin);
