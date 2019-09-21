@@ -6,6 +6,7 @@ module.exports = sequelize.define('lesson_comments', {
   lessons_uid: Sequelize.CHAR,
 
   comment: Sequelize.TEXT,
+  star: Sequelize.INTEGER,
 
   deleted_at: Sequelize.DATE,
   created_at: Sequelize.DATE,

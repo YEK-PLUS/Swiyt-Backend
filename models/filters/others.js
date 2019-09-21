@@ -16,6 +16,7 @@ export const FilterComment = (CommentModel) => {
   const filteredComment = _.pick(comment, [
     'uid',
     'comment',
+    'star',
   ]);
   filteredComment.user = FilterUser(CommentModel.user);
   return filteredComment;
