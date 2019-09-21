@@ -35,4 +35,5 @@ router.post('/subscriptions/all', auth, (req, res) => AllSubscriptions(req.user.
   return res.status(200).send(a).end();
 }));
 router.post('/', (req, res) => CourseDetail(req.body.user, req.body.course).then((course) => res.status(200).send(FilterUserAndUserCourse(course)).end()));
+router.post('/auth',auth, (req, res) => CourseDetail(req.body.user, req.body.course,req.user.uid).then((course) => res.status(200).send(FilterUserAndUserCourse(course)).end()));
 module.exports = router;

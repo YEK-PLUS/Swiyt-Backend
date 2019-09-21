@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import { FilterUser, FilterImage } from './user';
-import { FilterCategory, FilterComment } from './others';
+import { FilterCategory, FilterComment,FilterWishList } from './others';
 
 export const FilterCourse = (CourseModel) => {
   const course = CourseModel.toJSON();
@@ -23,6 +23,9 @@ export const FilterCourse = (CourseModel) => {
     return true;
   });
   filteredCourse.rate = _.mean(rates);
+  if(CourseModel.wish_lists && CourseModel.wish_lists[0]){
+    filteredCourse.wishList = FilterWishList(CourseModel.wish_lists[0]);
+  }
   filteredCourse.admin = FilterUser(CourseModel.admin);
   filteredCourse.banner = FilterImage(CourseModel.banner);
   filteredCourse.thub = FilterImage(CourseModel.thub);
