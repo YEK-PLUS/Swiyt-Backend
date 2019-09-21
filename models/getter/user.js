@@ -18,7 +18,7 @@ export const JustPopulerUserAndCourses = () => User.findAndCountAll({
   include: [
     ...IncludeUser,
     {
-      ...IncludeUserCourses,
+      ...IncludeUserCourses(),
       required: true,
     },
   ],
@@ -28,7 +28,7 @@ export const JustAllPopulerUserAndCourses = () => User.findAndCountAll({
   include: [
     ...IncludeUser,
     {
-      ...IncludeUserCourses,
+      ...IncludeUserCourses(),
       required: true,
     },
   ],
