@@ -17,8 +17,8 @@ export default (props) => {
     model: WhiteList,
     include: [],
   };
-  if (required) {
-    model.required = true;
+  if (required == false || required == true) {
+    model.required = required;
   }
   if (where) {
     model.where = where;
