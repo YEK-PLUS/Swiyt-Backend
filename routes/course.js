@@ -196,7 +196,8 @@ router.post('/auth',auth, (req, res) => JustUser({
           opt:{
             where:{
               users_uid:req.user.uid
-            }
+            },
+            required:false
           }
         }
       }
