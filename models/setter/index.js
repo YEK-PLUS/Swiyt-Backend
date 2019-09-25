@@ -1,3 +1,3 @@
-import * as Lesson from './course';
+import UpdateWishList from './wishlist';
 
-module.exports = { ...Lesson };
+module.exports = { UpdateWishList };
