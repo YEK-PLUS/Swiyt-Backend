@@ -6,6 +6,7 @@ module.exports = sequelize.define('wish_lists', {
   lessons_uid: Sequelize.CHAR,
 
   wish_list: Sequelize.BOOLEAN,
+  card: Sequelize.BOOLEAN,
 
   deleted_at: Sequelize.DATE,
   created_at: Sequelize.DATE,
