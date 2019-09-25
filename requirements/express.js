@@ -4,6 +4,7 @@ import logger from 'morgan';
 import session from 'express-session';
 import cors from 'cors';
 import corsOptions from '../middlewares/cors';
+import logging from '../middlewares/logging';
 
 export default () => {
   const app = express();
@@ -14,6 +15,7 @@ export default () => {
   };
 
 
+  app.use(logger('combined', { stream: logging }));
   app.use(logger('dev'));
   app.use(express.json());
   app.use(express.urlencoded({ extended: false }));
