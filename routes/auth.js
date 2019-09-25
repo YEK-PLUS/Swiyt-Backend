@@ -5,7 +5,7 @@ import auth from '../middlewares/auth';
 import Models from '../models';
 
 const {
-  JustUser, JustUserWithUserName, User, UserDetails, FilterUser, Cdn, Images,
+  JustUser, FilterUser, UserDetails, User, Images, Cdn,
 } = Models;
 const router = Router();
 
@@ -15,7 +15,11 @@ router.post('/token', (req, res) => {
   if (!password || !username) {
     return res.status(403).send(key.returns.requiredFields).end();
   }
-  return JustUser(username, password).then((user) => {
+  return JustUser({
+    opt: {
+      where: { username, password },
+    },
+  }).then((user) => {
     if (!user) {
       return res.status(403).send(key.returns.userNotFound).end();
     }
@@ -39,14 +43,18 @@ router.post('/register', (req, res) => {
   if (!username || !password || !mail) {
     return res.status(403).send(key.returns.requiredFields).end();
   }
-  return JustUserWithUserName(username).then((user) => {
+  return JustUser({
+    opt: {
+      where: { username },
+    },
+  }).then((user) => {
     if (user != null) {
       return res.status(403).send(key.returns.userExists).end();
     }
     const uid = uuid();
     const avatarUid = uuid();
     const avatarUidCdn = uuid();
-
+    const pictureUid = avatarUid;
 
     const buildUser = {
       uid,
@@ -57,7 +65,7 @@ router.post('/register', (req, res) => {
     const buildUserDetails = {
       uid,
       mail,
-      picture_uid: avatarUid,
+      picture_uid: pictureUid,
     };
     const buildUserAvatarImage = {
       uid: avatarUid,
@@ -67,12 +75,13 @@ router.post('/register', (req, res) => {
       uid: avatarUidCdn,
       url: `https://dummyimage.com/400x400/141414/fff&text=${username.substring(0, 2)}`,
     };
-    Cdn.build(buildUserAvatarCdn).save();
-
-    Images.build(buildUserAvatarImage).save();
-
-    User.build(buildUser).save();
-    UserDetails.build(buildUserDetails).save();
+    Cdn.build(buildUserAvatarCdn).save().then(() => {
+      Images.build(buildUserAvatarImage).save().then(() => {
+        User.build(buildUser).save().then(() => {
+          UserDetails.build(buildUserDetails).save();
+        });
+      });
+    });
 
     return res.send(201, key.returns.success).end();
   });
