@@ -1,30 +1,53 @@
 import { Router } from 'express';
 import auth from '../middlewares/auth';
 import Models from '../models';
+import ModelFix from '../middlewares/modelFix'
 
 const {
-  JustUserDetailsAndCourseWithUserName,
-  FilterUserAndUserDetailsAndUserCourse,
-  JustAllPopulerUserAndCourses,
-  JustPopulerUserAndCourses,
-  FilterUserAndUserCourse,
+  JustUser,
+  FilterUser,
 } = Models;
 const router = Router();
 
-router.post('/userDetails', (req, res) => JustUserDetailsAndCourseWithUserName(req.body.username).then((userDetail) => {
+router.post('/userDetails', (req, res) => JustUser({
+  opt: {
+    where: { username: req.body.username },
+  },
+  including: {
+    userDetailIncluding: true,
+  },
+}).then((userDetail) => {
   if (!userDetail) {
     return res.status(200).send(key.returns.userNotFound).end();
   }
-  return res.status(200).send(FilterUserAndUserDetailsAndUserCourse(userDetail)).end();
+  return res.status(200).send(FilterUser(userDetail)).end();
 }));
-router.post('/populer/all', (req, res) => JustAllPopulerUserAndCourses().then((usersModel) => {
+router.post('/populer/all', (req, res) => JustUser('findAndCountAll', {
+  including: {
+    lessonIncluding: true,
+    lessonOpt: {
+      opt: {
+        required: true,
+      },
+    },
+  },
+}).then((usersModel) => {
   const users = [];
-  usersModel.rows.map((user) => users.push(FilterUserAndUserCourse(user)));
+  ModelFix(usersModel).model.map((user) => users.push(FilterUser(user)))
   res.status(200).send((users)).end();
 }));
-router.post('/populer', (req, res) => JustPopulerUserAndCourses().then((usersModel) => {
+router.post('/populer', (req, res) => JustUser('findAndCountAll', {
+  including: {
+    lessonIncluding: true,
+    lessonOpt: {
+      opt: {
+        required: true,
+      },
+    },
+  },
+}).then((usersModel) => {
   const users = [];
-  usersModel.rows.map((user) => users.push(FilterUserAndUserCourse(user)));
+  ModelFix(usersModel).model.map((user) => users.push(FilterUser(user)))
   res.status(200).send((users)).end();
 }));
 
