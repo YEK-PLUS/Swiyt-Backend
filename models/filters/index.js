@@ -1,5 +1,5 @@
-import * as User from './user';
-import * as Course from './course';
-import * as Others from './others';
+const User = require('./user');
+const Course = require('./course');
+const Other = require('./other');
 
-module.exports = { ...User, ...Course, ...Others };
+module.exports = { ...User, ...Course,...Other };
