@@ -15,6 +15,17 @@ router.post('/userDetails', (req, res) => JustUser({
   },
   including: {
     userDetailIncluding: true,
+    lessonIncluding:true,
+    lessonOpt:{
+      including:{
+        userIncluding:true,
+        userOpt:{
+          opt:{
+            asAdmin:true
+          }
+        }
+      }
+    }
   },
 }).then((userDetail) => {
   if (!userDetail) {
