@@ -1,55 +1,13 @@
 import User from '../model/user';
 import * as Includes from '../includes';
 
-const { IncludeUser, IncludeUserAndUserDetailsAndUserCourses, IncludeUserCourses } = Includes;
-export const JustUser = (username, password) => User.findOne({
-  where: {
-    username,
-    password,
-  },
-  include: IncludeUser,
-});
-export const JustPopulerUser = () => User.findAll({
-  include: IncludeUser,
-  limit: 5,
+const { IncludeUser } = Includes;
+const JustUser = (all, props) => {
+  const re_props = typeof all === 'string' ? props : all;
+  const re_all = typeof all !== 'string' ? 'findOne' : all;
+  return User[re_all](IncludeUser(re_props));
+};
 
-});
-export const JustPopulerUserAndCourses = () => User.findAndCountAll({
-  include: [
-    ...IncludeUser,
-    {
-      ...IncludeUserCourses(),
-      required: true,
-    },
-  ],
-  limit: 5,
-});
-export const JustAllPopulerUserAndCourses = () => User.findAndCountAll({
-  include: [
-    ...IncludeUser,
-    {
-      ...IncludeUserCourses(),
-      required: true,
-    },
-  ],
-  limit: 5,
-});
-export const JustUserWithUid = (uid) => User.findOne({
-  where: {
-    uid,
-  },
-  include: IncludeUser,
-});
-export const JustUserWithUserName = (username) => User.findOne({
-  where: {
-    username,
-  },
-  include: IncludeUser,
-});
-export const JustUserDetailsAndCourseWithUserName = (username) => User.findOne({
-  where: sequelize.where(
-    sequelize.fn('lower', sequelize.col('username')),
-    sequelize.fn('lower', username),
-  ),
-  include: IncludeUserAndUserDetailsAndUserCourses,
-});
+module.exports = {
+  JustUser,
+};
