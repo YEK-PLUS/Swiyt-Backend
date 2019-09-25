@@ -9,6 +9,7 @@ module.exports = (WishListModel) => {
     'lessons_uid',
     'users_uid',
     'wish_list',
+    'card'
   ]);
   if (_.has(wishList, 'user')) {
     filteredWishList.user = FilterUser(WishListModel.user);
