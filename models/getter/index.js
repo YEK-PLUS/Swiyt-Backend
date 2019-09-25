@@ -1,5 +1,6 @@
-import * as User from './user';
-import * as Lesson from './course';
-import * as Other from './other';
+const User = require('./user');
+const Course = require('./course');
+const Subscription = require('./subscription');
+const Other = require('./other');
 
-module.exports = { ...User, ...Lesson, ...Other };
+module.exports = { ...User,...Course,...Subscription,...Other };
