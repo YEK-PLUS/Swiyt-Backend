@@ -104,7 +104,6 @@ router.post('/subscriptions/all', auth, (req, res) => JustSubsription('findAll',
 }));
 router.post('/wishList', auth, (req, res) => {
   let { wishList,lessonUid } = req.body;
-  wishList = (wishList == 0 || wishList == 1) ? wishList : 0;
   UpdateWishList(lessonUid, req.user.uid, wishList).then((result) => {
     if (!result) {
       return res.status(200).send(key.returns.error).end();
