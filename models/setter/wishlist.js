@@ -8,9 +8,7 @@ export default (lessons_uid, users_uid, wish_list) => WishList.findOne({
   },
 }).then((wishList) => {
   if (wishList) {
-    return wishList.update({
-      wish_list,
-    });
+    return wishList.update(wish_list);
   }
   const uid = uuid();
 
@@ -18,7 +16,7 @@ export default (lessons_uid, users_uid, wish_list) => WishList.findOne({
     uid,
     lessons_uid,
     users_uid,
-    wish_list,
+    ...wish_list,
   };
   return WishList.build(buildWishList).save();
 });
