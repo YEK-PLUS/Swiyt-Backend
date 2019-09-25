@@ -5,7 +5,7 @@ import {
 } from 'passport-jwt';
 import Models from '../models';
 
-const { JustUserWithUid } = Models;
+const { JustUser } = Models;
 
 const jwtOptions = {};
 jwtOptions.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
@@ -14,7 +14,11 @@ jwtOptions.secretOrKey = key.JWTkey;
 export default (app) => {
   const strategy = new JwtStrategy(jwtOptions, (jwtPayload, done) => {
     const { uid } = jwtPayload;
-    JustUserWithUid(uid).then((result) => {
+    JustUser({
+      opt: {
+        where: { uid },
+      },
+    }).then((result) => {
       if (!result) {
         done(null, false);
       }
